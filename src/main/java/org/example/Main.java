@@ -13,6 +13,7 @@ public class Main {
         System.out.println(ms);
     }
     public static void main(String[] args) {
+        System.out.println("HW");
         Massiv mas1 = new Massiv();
         Massiv mas2 = new Massiv(15);
         PrintMas("Массив 1:",mas1); PrintMas("Массив 2:",mas2);

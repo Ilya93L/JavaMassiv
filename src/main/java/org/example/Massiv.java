@@ -19,6 +19,14 @@ public class Massiv implements InfMassiv {
     private  Object mas[];
     private int size = 10;
 
+    private boolean IndexBounds(int index)
+    {
+        if((this.size<index)||(index<0))
+        {
+            System.err.printf("Ошибка: Индекс %d не входит в границы массива\n",index);
+            return false;
+        }return  true;
+    }
     public Massiv() {
         mas = new Object[size];
     }
@@ -34,12 +42,14 @@ public class Massiv implements InfMassiv {
         for(int i=0;i<masObj.getSize();i++) this.getEl(i,masObj.setEl(i));
     }
     @Override
-    public Object setEl(int index) {
-        return this.mas[index];
+    public Object setEl(int index){
+        if(this.IndexBounds(index))
+        return this.mas[index]; else return null;
     }
 
     @Override
     public void getEl(int index,Object el) {
+        if(this.IndexBounds(index))
         this.mas[index] = el;
     }
 
@@ -69,9 +79,12 @@ public class Massiv implements InfMassiv {
 
     @Override
     public boolean equals(Massiv obj) {
-        if(this.size!=obj.getSize()) return false;
-        for(int i=0;i<this.size;i++)if(this.mas[i]!=obj.setEl(i)) return false;
-        return true;
+        if(this.size!=obj.getSize())
+            return false;
+        for(int i=0;i<this.size;i++)
+            if(this.mas[i].equals(obj.setEl(i)))
+                return true;
+        return false;
     }
 
 

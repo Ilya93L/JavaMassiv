@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -22,15 +23,15 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Massiv mas = new Massiv();
         while(flg) {
-            System.out.println(" 1 - Вывод массива");
-            System.out.println(" 2 - Инициализировать массив случайными числами");
-            System.out.println(" 3 - Ввести свой массив");
-            System.out.println(" 4 - Считать массив из файла");
-            System.out.println(" 5 - Перемешать элементы массива");
-            System.out.println(" 6 - Сортировка массива");
-            System.out.println(" 7 - Поиск в массиве");
-            System.out.println(" 8 - Бинарное дерево из массива");
-            System.out.println(" 0 - Выход");
+            System.out.println(" 1 - Вывод массива");                                   //  +
+            System.out.println(" 2 - Инициализировать массив случайными числами");      //  +
+            System.out.println(" 3 - Ввести свой массив");                              //
+            System.out.println(" 4 - Считать массив из файла");                         //
+            System.out.println(" 5 - Перемешать элементы массива");                     //
+            System.out.println(" 6 - Сортировка массива");                              //
+            System.out.println(" 7 - Поиск в массиве");                                 //
+            System.out.println(" 8 - Бинарное дерево из массива");                      //
+            System.out.println(" 0 - Выход");                                           //  +
             System.out.print("Введите ключ управления:"); key = sc.nextInt();
             switch (key) {
                 case 1 -> {
@@ -42,8 +43,16 @@ public class Main {
                     System.out.println(mas);
                     sc.nextLine();sc.nextLine();
                 }
-                case 3 , 4 , 5, 6 , 7 , 8->{
+                case 3 , 4 , 5 , 7 , 8->{
                     System.out.println("- в разработке - ");
+                    sc.nextLine();sc.nextLine();
+                }
+                case 6 -> {
+                    System.out.println("Сортировка пузырьком");
+                    Massiv buf = new Massiv(mas);
+                    Sorting.BubbleSort(buf);
+                    System.out.println(mas);
+                    System.out.println(buf);
                     sc.nextLine();sc.nextLine();
                 }
                 case 0 -> {

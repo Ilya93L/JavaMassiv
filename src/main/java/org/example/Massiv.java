@@ -5,8 +5,8 @@ import java.util.stream.Stream;
 
 interface InfMassiv
 {
-    public Object setEl(int index);
-    public void getEl(int index,Object el);
+    public int setEl(int index);
+    public void getEl(int index,int el);
     public int getSize();
     public String toString();
     public void RestartParam();
@@ -16,7 +16,7 @@ interface InfMassiv
 
 public class Massiv implements InfMassiv {
 
-    private  Object mas[];
+    private  int mas[];
     private int size = 10;
 
     private boolean IndexBounds(int index)
@@ -28,27 +28,27 @@ public class Massiv implements InfMassiv {
         }return  true;
     }
     public Massiv() {
-        mas = new Object[size];
+        mas = new int[size];
     }
 
     public Massiv(int size) {
         this.size = size;
-        mas = new Object[size];
+        mas = new int[size];
     }
     public Massiv(Massiv masObj)
     {
         this.size = masObj.getSize();
-        this.mas = new Object[this.size];
+        this.mas = new int[this.size];
         for(int i=0;i<masObj.getSize();i++) this.getEl(i,masObj.setEl(i));
     }
     @Override
-    public Object setEl(int index){
+    public int setEl(int index){
         if(this.IndexBounds(index))
-        return this.mas[index]; else return null;
+        return this.mas[index]; else return 0;
     }
 
     @Override
-    public void getEl(int index,Object el) {
+    public void getEl(int index,int el) {
         if(this.IndexBounds(index))
         this.mas[index] = el;
     }
@@ -82,10 +82,10 @@ public class Massiv implements InfMassiv {
         if(this.size!=obj.getSize())
             return false;
         for(int i=0;i<this.size;i++)
-            if(this.mas[i].equals(obj.setEl(i)))
-                return true;
-        return false;
+            if(this.mas[i]!=obj.setEl(i))
+                return false;
+        return true;
     }
 
-
 }
+

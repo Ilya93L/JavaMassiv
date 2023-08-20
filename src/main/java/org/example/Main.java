@@ -48,11 +48,11 @@ public class Main {
                     sc.nextLine();sc.nextLine();
                 }
                 case 6 -> {
-                    System.out.println("Сортировка пузырьком");
-                    Massiv buf = new Massiv(mas);
-                    Sorting.BubbleSort(buf);
-                    System.out.println(mas);
-                    System.out.println(buf);
+                    System.out.println("Сортировки - Исходный массив:");    System.out.println(mas);
+                    System.out.println("Сортировка пузырьком / Bubble Sort O(n^2)");
+                    Massiv buf = new Massiv(mas);   Sorting.BubbleSort(buf);   System.out.println(buf);
+                    System.out.println("Коктельная сортировка / Shaker sort O(n^2)");
+                    buf = mas.clone(); Sorting.ShakerSort(buf); System.out.println(buf);
                     sc.nextLine();sc.nextLine();
                 }
                 case 0 -> {

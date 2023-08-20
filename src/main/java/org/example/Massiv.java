@@ -14,10 +14,11 @@ interface InfMassiv
 }
 
 
+
 public class Massiv implements InfMassiv {
 
     private  int mas[];
-    private int size = 10;
+    private int size = 50;//_000;
 
     private boolean IndexBounds(int index)
     {
@@ -68,7 +69,7 @@ public class Massiv implements InfMassiv {
     @Override
     public void RestartParam() {
         for (int i = 0; i < size; i++)
-            mas[i] = (int) (Math.random() * 100 + 1);
+            mas[i] = (int) (Math.random() * 100 + 1) - (int)(Math.random()*100+1);
     }
 
     @Override

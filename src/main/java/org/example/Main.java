@@ -3,19 +3,9 @@ package org.example;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void PrintMas(String str,Massiv ms)
-    {
-        System.out.println(str);
-        System.out.println(ms);
-    }
     public static void main(String[] args){
         System.out.println("-ARRAY-");
         int key;
@@ -28,7 +18,7 @@ public class Main {
             System.out.println(" 3 - Ввести свой массив");                              //
             System.out.println(" 4 - Считать массив из файла");                         //
             System.out.println(" 5 - Перемешать элементы массива");                     //
-            System.out.println(" 6 - Сортировка массива");                              //
+            System.out.println(" 6 - Сортировка массива");                              //  +-
             System.out.println(" 7 - Поиск в массиве");                                 //
             System.out.println(" 8 - Бинарное дерево из массива");                      //
             System.out.println(" 0 - Выход");                                           //  +
@@ -50,9 +40,18 @@ public class Main {
                 case 6 -> {
                     System.out.println("Сортировки - Исходный массив:");    System.out.println(mas);
                     System.out.println("Сортировка пузырьком / Bubble Sort O(n^2)");
-                    Massiv buf = new Massiv(mas);   Sorting.BubbleSort(buf);   System.out.println(buf);
+                    Massiv buf = new Massiv(mas);
+                    long time = System.currentTimeMillis();     Sorting.BubbleSort(buf);    long timeend = System.currentTimeMillis();
+                    long timeBubbleSort = timeend-time;
+                    System.out.println(buf);
                     System.out.println("Коктельная сортировка / Shaker sort O(n^2)");
-                    buf = mas.clone(); Sorting.ShakerSort(buf); System.out.println(buf);
+                    buf = mas.clone();
+                    long time2 = System.currentTimeMillis();  Sorting.ShakerSort(buf);    long timeend2 = System.currentTimeMillis();
+                    long timeShakerSort = timeend2-time2;
+                    System.out.println(buf);
+
+                    System.out.println("Время работы пузырьковой сортировки:"+timeBubbleSort);
+                    System.out.println("Время работы шейкерной сортировки:"+timeShakerSort);
                     sc.nextLine();sc.nextLine();
                 }
                 case 0 -> {

@@ -26,24 +26,20 @@ public class Sorting {
         int end = array.getSize()-1;
         int beg = -1;
         boolean flg =true;
-        while(flg)
+        while(end>beg)
         {
-            flg = false;
             beg++;
             for(int i=beg;i<end;i++)
             {
                 if(array.setEl(i)>array.setEl(i+1)) {
                     Swap(array,i,(i+1));
-                    flg =true;
                 }
             }
-            if(flg!=true) break;
             end--;
             for(int i=end;i>beg;i--)
             {
                 if(array.setEl(i)<array.setEl(i-1)) {
                     Swap(array,i,(i-1));
-                    flg =true;
                 }
             }
 

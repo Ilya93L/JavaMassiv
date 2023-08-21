@@ -8,7 +8,7 @@ import java.util.List;
  * @see Sorting#BubbleSort(Massiv) BubbleSort(Massiv) <a> - Пузырьковая сортировка O(n^2)</a>
  * @see Sorting#ShakerSort(Massiv) ChakerSort(Massiv) <a> - Шейкерная сортировка O(n^2)</a>
  * @see Sorting#CombSort(Massiv) CombSort(Massiv)      <a> - Сортировка расческой O(n log n)</a>
- * @see Sorting#InsertionSort(Massiv) InsertionSort(Massiv) <a> - </a>
+ * @see Sorting#InsertionSort(Massiv) InsertionSort(Massiv) <a> - Сортировка вставками O(n^2)</a>
  * @see Sorting#ShellSort(Massiv) ShellSort(Massiv) <a> - </a>
  * @see Sorting#TreeSort(Massiv) TreeSort(Massiv) <a> - </a>
  * @see Sorting#QuickSort(Massiv) QuickSort(Massiv) <a> - </a>
@@ -63,7 +63,11 @@ public class Sorting {
 
         }
     }
-    //Сортировка расческой / Comb sort O(n log n)
+
+    /**
+     * Сортировка расческой / Comb sort O(n log n)
+     * @param array - Сортируемый массив
+     */
     public static void CombSort(Massiv array)
     {
         int size = array.getSize()-1;
@@ -77,10 +81,12 @@ public class Sorting {
                 size/=1.247;
             else flg =false;
         }
-        //System.out.println(array);
-        //Sorting.BubbleSort(array);
     }
-    //Сортировка вставками / Insertion sort O(n^2)
+
+    /**
+     * Сортировка вставками / Insertion sort O(n^2)
+     * @param array - Сортируемый массив
+     */
     public  static void InsertionSort(Massiv array)
     {
         for(int i=1; i<array.getSize(); i++) // -> от 0 до n
@@ -88,13 +94,7 @@ public class Sorting {
             int a = array.setEl(i);
             int j;
             for(j=i-1; j>-1; j--)       // от текущего элемента i до 0
-            {
-
-                if(a>array.setEl(j))
-                {
-                    break;
-                }
-            }
+                if(a>array.setEl(j))    break;
             for(int k=i-1;k>j;k--)  //от i элемента до меньшего элемента в массиве j
                 array.getEl(k+1,array.setEl(k));
             array.getEl(j+1,a);

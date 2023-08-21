@@ -17,7 +17,7 @@ public class Main {
             System.out.println(" 2 - Инициализировать массив случайными числами");      //  +
             System.out.println(" 3 - Ввести свой массив");                              //
             System.out.println(" 4 - Считать массив из файла");                         //
-            System.out.println(" 5 - Перемешать элементы массива");                     //
+            System.out.println(" 5 - Перемешать элементы массива");                     //  +
             System.out.println(" 6 - Сортировка массива");                              //  +-
             System.out.println(" 7 - Поиск в массиве");                                 //
             System.out.println(" 8 - Бинарное дерево из массива");                      //

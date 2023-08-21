@@ -7,7 +7,7 @@ import java.util.List;
  * Методы:
  * @see Sorting#BubbleSort(Massiv) BubbleSort(Massiv) <a> - Пузырьковая сортировка O(n^2)</a>
  * @see Sorting#ShakerSort(Massiv) ChakerSort(Massiv) <a> - Шейкерная сортировка O(n^2)</a>
- * @see Sorting#CombSort(Massiv) CombSort(Massiv)      <a> - Сортировка расчесткой O(n log n)</a>
+ * @see Sorting#CombSort(Massiv) CombSort(Massiv)      <a> - Сортировка расческой O(n log n)</a>
  * @see Sorting#InsertionSort(Massiv) InsertionSort(Massiv) <a> - </a>
  * @see Sorting#ShellSort(Massiv) ShellSort(Massiv) <a> - </a>
  * @see Sorting#TreeSort(Massiv) TreeSort(Massiv) <a> - </a>
@@ -63,7 +63,7 @@ public class Sorting {
 
         }
     }
-    //Сортировка расчесткой / Comb sort O(n log n)
+    //Сортировка расческой / Comb sort O(n log n)
     public static void CombSort(Massiv array)
     {
         int size = array.getSize()-1;

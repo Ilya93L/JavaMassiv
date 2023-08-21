@@ -55,7 +55,7 @@ public class Main {
                     long timeShakerSort = timeend-time;
                     System.out.println(buf);
 
-                    System.out.println("Сортировка расчесткой / Comb sort O(n^2)");
+                    System.out.println("Сортировка расческой / Comb sort O(n^2)");
                     buf = mas.clone();
                     time = System.currentTimeMillis();  Sorting.CombSort(buf);    timeend = System.currentTimeMillis();
                     long timeCombSort = timeend-time;
@@ -63,7 +63,7 @@ public class Main {
 
                     System.out.println("Время работы пузырьковой сортировки:"+timeBubbleSort);
                     System.out.println("Время работы шейкерной сортировки:"+timeShakerSort);
-                    System.out.println("Время работы сортировки расчесткой :"+timeCombSort);
+                    System.out.println("Время работы сортировки расческой :"+timeCombSort);
                 }
                 case 0 -> {
                     System.out.println("- Выход - ");

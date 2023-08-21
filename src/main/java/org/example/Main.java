@@ -31,8 +31,14 @@ public class Main {
                     mas.restartParam();
                     System.out.println(mas);    //Вывод массива
                 }
-                case 3 , 4 , 5 , 7 , 8->{
+                case 3 , 4 , 7 , 8->{
                     System.out.println("- в разработке - ");
+                }
+                case 5->{
+                    System.out.println("Перемешать элементы массива");
+                    System.out.println(mas);
+                    mas.rndParamPos();
+                    System.out.println(mas);
                 }
                 case 6 -> {
                     System.out.println("Сортировки - Исходный массив:");    System.out.println(mas);

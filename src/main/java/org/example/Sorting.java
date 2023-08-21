@@ -10,17 +10,6 @@ import java.util.List;
  */
 public class Sorting {
     /**
-     * Скрытый метод для передачи значений между двумя элементами массива
-     * @param mas (исходный массив)
-     * @param i (первый элемент)
-     * @param j (второй элемент)
-     */
-    private static void Swap(Massiv mas, int i, int j){
-        int a = mas.setEl(i);
-        mas.getEl(i,mas.setEl(j));
-        mas.getEl(j,a);
-    }
-    /**
      * Сортировка массива пузырьковой сортировкой /Bubble Sort
      * O(n^2)
      * @param array - сортируемый массив
@@ -32,7 +21,7 @@ public class Sorting {
             flg=false;
             for (int j = i + 1; j < array.getSize(); j++)
                 if (array.setEl(i) > array.setEl(j)) {
-                    Swap(array,i,j);
+                    arrayMethods.swap(array,i,j);
                     flg =true;
                 }
             i++;
@@ -56,14 +45,14 @@ public class Sorting {
             for(int i=beg;i<end;i++)
             {
                 if(array.setEl(i)>array.setEl(i+1)) {
-                    Swap(array,i,(i+1));
+                    arrayMethods.swap(array,i,(i+1));
                 }
             }
             end--;
             for(int i=end;i>beg;i--)
             {
                 if(array.setEl(i)<array.setEl(i-1)) {
-                    Swap(array,i,(i-1));
+                    arrayMethods.swap(array,i,(i-1));
                 }
             }
 

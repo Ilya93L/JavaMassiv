@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 public class Massiv implements InfMassiv {
 
     private  int mas[];         //Массив
-    private int size = 50;//_000;   //Размер массива
+    private int size = 15;//_000;   //Размер массива
 
     private boolean IndexBounds(int index)  //проверка выхода за границы массива
     {
@@ -74,8 +74,21 @@ public class Massiv implements InfMassiv {
     }
 
     @Override
-    public void add(int al) {
+    public void rndParamPos() {
+        for (int i=0;i<this.size;i++)
+        {
+            int j = (int)(Math.random()*this.size)%this.size;
+            arrayMethods.swap(this,i,j);
+        }
+    }
 
+
+    @Override
+    public void add(int al) {
+        int mas[] = new int[this.size+1];
+        for(int i=0;i<this.size;i++,mas[i]=this.mas[i]);
+        mas[this.size]=al;
+        this.size++; this.mas=mas;
     }
 
     @Override

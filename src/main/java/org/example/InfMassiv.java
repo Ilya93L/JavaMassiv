@@ -2,14 +2,12 @@ package org.example;
 
 /**
  * Интерфейс InfMassiv
- * @see <a href=InfMassiv#setEl(int)>123</a>  wdad
  *  @see InfMassiv#setEl(int) setEl(int index) <a> - получить элемент массива с номером index"</a>
  *  @see InfMassiv#getEl(int, int)  getEl(int index,int el) <a> - задать элемент с номером index параметров el"</a>
  *  @see InfMassiv#getSize()  getSize() <a> - получить текущую размерность массива"</a>
  *  @see InfMassiv#toString()  toString() <a> - получить строку вывода элементов массива"</a>
  *  @see InfMassiv#restartParam()  restartParam() <a> - переопределение всех элементов в массиве случайными числами"</a>
  *  @see InfMassiv#add(int)  add(int al) <a> - добавить новый элемент в массив"</a>
- *
  */
 public interface InfMassiv
 {
@@ -44,9 +42,11 @@ public interface InfMassiv
      */
     public void restartParam(); //переопределить параметры массива
 
-    /**
+    public void rndParamPos();//переопределить позиции элементов в массиве
+     /**
      * Добавить новый элемент в массив
      * @param al - значение параметра
      */
     public  void add(int al);   //добавить элемент в массив
 }
+

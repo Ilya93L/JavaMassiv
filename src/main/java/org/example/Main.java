@@ -42,19 +42,28 @@ public class Main {
                 }
                 case 6 -> {
                     System.out.println("Сортировки - Исходный массив:");    System.out.println(mas);
+
                     System.out.println("Сортировка пузырьком / Bubble Sort O(n^2)");
                     Massiv buf = new Massiv(mas);
                     long time = System.currentTimeMillis();     Sorting.BubbleSort(buf);    long timeend = System.currentTimeMillis();
                     long timeBubbleSort = timeend-time;
                     System.out.println(buf);
+
                     System.out.println("Коктельная сортировка / Shaker sort O(n^2)");
                     buf = mas.clone();
-                    long time2 = System.currentTimeMillis();  Sorting.ShakerSort(buf);    long timeend2 = System.currentTimeMillis();
-                    long timeShakerSort = timeend2-time2;
+                    time = System.currentTimeMillis();  Sorting.ShakerSort(buf);    timeend = System.currentTimeMillis();
+                    long timeShakerSort = timeend-time;
+                    System.out.println(buf);
+
+                    System.out.println("Сортировка расчесткой / Comb sort O(n^2)");
+                    buf = mas.clone();
+                    time = System.currentTimeMillis();  Sorting.CombSort(buf);    timeend = System.currentTimeMillis();
+                    long timeCombSort = timeend-time;
                     System.out.println(buf);
 
                     System.out.println("Время работы пузырьковой сортировки:"+timeBubbleSort);
                     System.out.println("Время работы шейкерной сортировки:"+timeShakerSort);
+                    System.out.println("Время работы сортировки расчесткой :"+timeCombSort);
                 }
                 case 0 -> {
                     System.out.println("- Выход - ");

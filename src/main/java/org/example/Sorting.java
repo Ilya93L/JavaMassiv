@@ -3,10 +3,15 @@ package org.example;
 import java.util.List;
 
 /**
- * Класс Sorting для различных типов сортировок одномерного массива
+ * Класс Sorting для различных типов сортировок одномерного массива класса {@link Massiv}<p>
  * Методы:
- *  Sorting.BubbleSort()
- *  Sorting.ChakerSort()
+ * @see Sorting#BubbleSort(Massiv) BubbleSort(Massiv) <a> - Пузырьковая сортировка O(n^2)</a>
+ * @see Sorting#ShakerSort(Massiv) ChakerSort(Massiv) <a> - Шейкерная сортировка O(n^2)</a>
+ * @see Sorting#CombSort(Massiv) CombSort(Massiv)      <a> - Сортировка расчесткой O(n log n)</a>
+ * @see Sorting#InsertionSort(Massiv) InsertionSort(Massiv) <a> - </a>
+ * @see Sorting#ShellSort(Massiv) ShellSort(Massiv) <a> - </a>
+ * @see Sorting#TreeSort(Massiv) TreeSort(Massiv) <a> - </a>
+ * @see Sorting#QuickSort(Massiv) QuickSort(Massiv) <a> - </a>
  */
 public class Sorting {
     /**
@@ -58,10 +63,18 @@ public class Sorting {
 
         }
     }
-    //Сортировка расчесткой / Comb sort
+    //Сортировка расчесткой / Comb sort O(n log n)
     public static void CombSort(Massiv array)
     {
-
+        int size = array.getSize()-1;
+        while(size>1)
+        {
+            for(int i=0;(i+size)<array.getSize();i++)
+                if(array.setEl(i)>array.setEl(i+size))
+                    arrayMethods.swap(array,i,(i+size));
+            size/=1.247;
+        }
+        Sorting.BubbleSort(array);
     }
     //Сортировка вставками / Insertion sort
     public  static void InsertionSort(Massiv array)

@@ -4,22 +4,22 @@ package org.example;
 import java.util.stream.Stream;
 
 /**
- * Класс Massiv -представление массива целых чисел простого типа int
- * Методы Massiv:
- * Massiv
- * Massiv
- * Massiv
- * Massiv
- * Massiv
- * Massiv
- * Massiv
- * Massiv
- * Massiv
+ * Класс Massiv - представление массива целых чисел простого типа int <p>
+ * Методы класса Massiv:
+ * @see Massiv#add(int) 
+ * @see Massiv#getSize() 
+ * @see Massiv#getEl(int, int) 
+ * @see Massiv#setEl(int) 
+ * @see Massiv#toString() 
+ * @see Massiv#equals(Massiv) 
+ * @see Massiv#restartParam() 
+ * @see Massiv#rndParamPos() 
+ * @see Massiv#IndexBounds(int)
  */
 public class Massiv implements InfMassiv {
 
     private  int mas[];         //Массив
-    private int size = 15;//_000;   //Размер массива
+    private int size = 1000;//_000;   //Размер массива
 
     private boolean IndexBounds(int index)  //проверка выхода за границы массива
     {

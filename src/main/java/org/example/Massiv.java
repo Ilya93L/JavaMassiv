@@ -3,24 +3,12 @@ package org.example;
 
 import java.util.stream.Stream;
 
-interface InfMassiv
-{
-    public int setEl(int index);
-    public void getEl(int index,int el);
-    public int getSize();
-    public String toString();
-    public void RestartParam();
-    public boolean equals(Massiv obj);
-}
-
-
-
 public class Massiv implements InfMassiv {
 
-    private  int mas[];
-    private int size = 50;//_000;
+    private  int mas[];         //Массив
+    private int size = 50;//_000;   //Размер массива
 
-    private boolean IndexBounds(int index)
+    private boolean IndexBounds(int index)  //проверка выхода за границы массива
     {
         if((this.size<index)||(index<0))
         {
@@ -30,7 +18,7 @@ public class Massiv implements InfMassiv {
     }
     public Massiv() {
         mas = new int[size];
-    }
+    }   //конструктор без параметров
 
     public Massiv(int size) {
         this.size = size;
@@ -73,12 +61,16 @@ public class Massiv implements InfMassiv {
     }
 
     @Override
+    public void add(int al) {
+
+    }
+
+    @Override
     public Massiv clone() {
         Massiv res = new Massiv(this);
         return res;
     }
 
-    @Override
     public boolean equals(Massiv obj) {
         if(this.size!=obj.getSize())
             return false;

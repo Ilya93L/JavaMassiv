@@ -2,13 +2,14 @@ package org.example;
 
 /**
  * Интерфейс InfMassiv
- * Методы InfMassiv:
- *  InfMassiv.setEl(int index)  - вызвать элемент массива
- *  InfMassiv.getEl(int index,int el); - задать элемент массива
- *  InfMassiv.getSize() - вызвать размерность массива
- *  InfMassiv.toString() - вывод массива
- *  InfMassiv.RestartParam() - автоматически перезадать элементы массива
- *  InfMassiv.add(int al) - добавить элемент к массиву
+ * @see <a href=InfMassiv#setEl(int)>123</a>  wdad
+ *  @see InfMassiv#setEl(int) setEl(int index) <a> - получить элемент массива с номером index"</a>
+ *  @see InfMassiv#getEl(int, int)  getEl(int index,int el) <a> - задать элемент с номером index параметров el"</a>
+ *  @see InfMassiv#getSize()  getSize() <a> - получить текущую размерность массива"</a>
+ *  @see InfMassiv#toString()  toString() <a> - получить строку вывода элементов массива"</a>
+ *  @see InfMassiv#restartParam()  restartParam() <a> - переопределение всех элементов в массиве случайными числами"</a>
+ *  @see InfMassiv#add(int)  add(int al) <a> - добавить новый элемент в массив"</a>
+ *
  */
 public interface InfMassiv
 {
@@ -41,7 +42,7 @@ public interface InfMassiv
     /**
      * Автоматическое переопределение параметров массива
      */
-    public void RestartParam(); //переопределить параметры массива
+    public void restartParam(); //переопределить параметры массива
 
     /**
      * Добавить новый элемент в массив

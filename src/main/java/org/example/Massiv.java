@@ -3,6 +3,19 @@ package org.example;
 
 import java.util.stream.Stream;
 
+/**
+ * Класс Massiv -представление массива целых чисел простого типа int
+ * Методы Massiv:
+ * Massiv
+ * Massiv
+ * Massiv
+ * Massiv
+ * Massiv
+ * Massiv
+ * Massiv
+ * Massiv
+ * Massiv
+ */
 public class Massiv implements InfMassiv {
 
     private  int mas[];         //Массив
@@ -55,7 +68,7 @@ public class Massiv implements InfMassiv {
     }
 
     @Override
-    public void RestartParam() {
+    public void restartParam() {
         for (int i = 0; i < size; i++)
             mas[i] = (int) (Math.random() * 100 + 1) - (int)(Math.random()*100+1);
     }

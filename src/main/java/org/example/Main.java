@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         System.out.println("-ARRAY-");
-        int key;
-        boolean flg=true;
-        Scanner sc = new Scanner(System.in);
-        Massiv mas = new Massiv();
+        int key;        //Ключ управления в меню
+        boolean flg = true; //Параметр продолжения цикла
+        Scanner sc = new Scanner(System.in);   //Параметр для ввода данных из окна консоли
+        Massiv mas = new Massiv(); //Определение объекта массива
         while(flg) {
             System.out.println(" 1 - Вывод массива");                                   //  +
             System.out.println(" 2 - Инициализировать массив случайными числами");      //  +
@@ -25,17 +25,14 @@ public class Main {
             System.out.print("Введите ключ управления:"); key = sc.nextInt();
             switch (key) {
                 case 1 -> {
-                    System.out.println(mas);
-                    sc.nextLine();sc.nextLine();
+                    System.out.println(mas);    //Вывод массива
                 }
                 case  2-> {
-                    mas.RestartParam();
-                    System.out.println(mas);
-                    sc.nextLine();sc.nextLine();
+                    mas.restartParam();
+                    System.out.println(mas);    //Вывод массива
                 }
                 case 3 , 4 , 5 , 7 , 8->{
                     System.out.println("- в разработке - ");
-                    sc.nextLine();sc.nextLine();
                 }
                 case 6 -> {
                     System.out.println("Сортировки - Исходный массив:");    System.out.println(mas);
@@ -52,17 +49,17 @@ public class Main {
 
                     System.out.println("Время работы пузырьковой сортировки:"+timeBubbleSort);
                     System.out.println("Время работы шейкерной сортировки:"+timeShakerSort);
-                    sc.nextLine();sc.nextLine();
                 }
                 case 0 -> {
                     System.out.println("- Выход - ");
                     sc.nextLine();sc.nextLine();
-                    flg =false;
+                    flg = false;
                 }
                 default -> {
-                    System.out.println("- Не верный ввод команды");sc.nextLine();sc.nextLine();
+                    System.out.println("- Не верный ввод команды");
                 }
             }
+            sc.nextLine();sc.nextLine();    //Приостановка перед выводом меню
         }
     }
 }

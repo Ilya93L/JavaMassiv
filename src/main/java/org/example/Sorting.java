@@ -67,19 +67,38 @@ public class Sorting {
     public static void CombSort(Massiv array)
     {
         int size = array.getSize()-1;
-        while(size>1)
+        boolean flg =true;
+        while(flg)
         {
             for(int i=0;(i+size)<array.getSize();i++)
                 if(array.setEl(i)>array.setEl(i+size))
                     arrayMethods.swap(array,i,(i+size));
-            size/=1.247;
+            if((size/1.247)>1)
+                size/=1.247;
+            else flg =false;
         }
-        Sorting.BubbleSort(array);
+        //System.out.println(array);
+        //Sorting.BubbleSort(array);
     }
-    //Сортировка вставками / Insertion sort
+    //Сортировка вставками / Insertion sort O(n^2)
     public  static void InsertionSort(Massiv array)
     {
+        for(int i=1; i<array.getSize(); i++) // -> от 0 до n
+        {
+            int a = array.setEl(i);
+            int j;
+            for(j=i-1; j>-1; j--)       // от текущего элемента i до 0
+            {
 
+                if(a>array.setEl(j))
+                {
+                    break;
+                }
+            }
+            for(int k=i-1;k>j;k--)  //от i элемента до меньшего элемента в массиве j
+                array.getEl(k+1,array.setEl(k));
+            array.getEl(j+1,a);
+        }
     }
     //Сортировка Шелла / Shellsort
     public static void ShellSort(Massiv array)

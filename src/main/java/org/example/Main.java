@@ -15,7 +15,7 @@ public class Main {
         while(flg) {
             System.out.println(" 1 - Вывод массива");                                   //  +
             System.out.println(" 2 - Инициализировать массив случайными числами");      //  +
-            System.out.println(" 3 - Ввести свой массив");                              //
+            System.out.println(" 3 - Ввести свой массив");                              //  +
             System.out.println(" 4 - Считать массив из файла");                         //
             System.out.println(" 5 - Перемешать элементы массива");                     //  +
             System.out.println(" 6 - Сортировка массива");                              //  +-
@@ -31,7 +31,18 @@ public class Main {
                     mas.restartParam();
                     System.out.println(mas);    //Вывод массива
                 }
-                case 3 , 4 , 7 , 8->{
+                case 3->{                       //Ввод собственного массива
+                    System.out.print("Введите размерность массива:");
+                    int size_array = sc.nextInt();   //ввод размерности массива
+                    mas = new Massiv(size_array);
+                    for(int i=0;i<size_array;i++)
+                    {
+                        System.out.printf("Введите элемент массива [%d]:=",i);
+                        mas.getEl(i, sc.nextInt());
+                    }
+                    System.out.println(mas);
+                }
+                case 4 , 7 , 8->{
                     System.out.println("- в разработке - ");
                 }
                 case 5->{

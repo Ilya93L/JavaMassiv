@@ -103,7 +103,20 @@ public class Sorting {
     //Сортировка Шелла / Shellsort
     public static void ShellSort(Massiv array)
     {
-
+        for(int step = array.getSize()/2;step>0;step/=2) {
+            for (int i = step; i < array.getSize(); i++)
+            {
+                int a = array.setEl(i);
+                int j;
+                for (j = i; j >=step; j-=step)
+                {
+                    if(a<array.setEl(j-step))
+                        array.getEl(j,array.setEl(j-step));
+                        else break;
+                }
+                array.getEl(j, a);
+            }
+        }
     }
     //Сортировка деревом / Tree sort
     public static  void TreeSort(Massiv array)

@@ -4,7 +4,6 @@ package org.example;
 // then press Enter. You can now see whitespace characters in your code.
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.Scanner;
 
 public class Main {
@@ -91,10 +90,18 @@ public class Main {
                     time = System.currentTimeMillis();  Sorting.InsertionSort(buf);    timeend = System.currentTimeMillis();
                     long timeInsertionSort = timeend-time;
                     System.out.println(buf);
-                    System.out.println("Время работы пузырьковой сортировки:"+timeBubbleSort);
-                    System.out.println("Время работы шейкерной сортировки:"+timeShakerSort);
-                    System.out.println("Время работы сортировки расческой :"+timeCombSort);
-                    System.out.println("Время работы сортировки вставками :"+timeInsertionSort);
+
+                    System.out.println("Сортировка Шелла / Shellsort O(n^2)");
+                    buf = mas.clone();
+                    time = System.currentTimeMillis();  Sorting.ShellSort(buf);    timeend = System.currentTimeMillis();
+                    long timeShellSort = timeend-time;
+                    System.out.println(buf);
+
+                    System.out.println("Время работы пузырьковой сортировки :"+timeBubbleSort);
+                    System.out.println("Время работы шейкерной сортировки   :"+timeShakerSort);
+                    System.out.println("Время работы сортировки расческой   :"+timeCombSort);
+                    System.out.println("Время работы сортировки вставками   :"+timeInsertionSort);
+                    System.out.println("Время работы сортировки Шелла       :"+timeShellSort);
                 }
                 case 0 -> {
                     System.out.println("- Выход - ");

@@ -91,13 +91,16 @@ public class Sorting {
     {
         for(int i=1; i<array.getSize(); i++) // -> от 0 до n
         {
-            int a = array.setEl(i);
+            //int a = array.setEl(i);
             int j;
-            for(j=i-1; j>-1; j--)       // от текущего элемента i до 0
-                if(a>array.setEl(j))    break;
-            for(int k=i-1;k>j;k--)  //от i элемента до меньшего элемента в массиве j
+            for(j=i; j>0; j--)       // от текущего элемента i до 0
+                if(array.setEl(j)<array.setEl(j-1))
+                    arrayMethods.swap(array,j,j-1);
+                    else break;
+
+            /*for(int k=i-1;k>j;k--)  //от i элемента до меньшего элемента в массиве j
                 array.getEl(k+1,array.setEl(k));
-            array.getEl(j+1,a);
+            array.getEl(j+1,a);*/
         }
     }
     //Сортировка Шелла / Shellsort

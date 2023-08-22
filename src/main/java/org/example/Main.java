@@ -3,6 +3,8 @@ package org.example;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +18,7 @@ public class Main {
             System.out.println(" 1 - Вывод массива");                                   //  +
             System.out.println(" 2 - Инициализировать массив случайными числами");      //  +
             System.out.println(" 3 - Ввести свой массив");                              //  +
-            System.out.println(" 4 - Считать массив из файла");                         //
+            System.out.println(" 4 - Считать массив из файла");                         //  +
             System.out.println(" 5 - Перемешать элементы массива");                     //  +
             System.out.println(" 6 - Сортировка массива");                              //  +-
             System.out.println(" 7 - Поиск в массиве");                                 //
@@ -42,7 +44,19 @@ public class Main {
                     }
                     System.out.println(mas);
                 }
-                case 4 , 7 , 8->{
+                case 4 ->{                      //Ввод массива из файла
+                    String filename;
+                    System.out.print("Введите название файла:"); filename=sc.next();
+                    try( Scanner read = new Scanner(new File(filename))){
+                    mas = new Massiv(0);
+                    while (read.hasNextLine())
+                        mas.add(read.nextInt());
+                    } catch (Exception e) {
+                        System.err.println(e);
+                    }
+                    System.out.println(mas);
+                }
+                case 7 , 8->{
                     System.out.println("- в разработке - ");
                 }
                 case 5->{

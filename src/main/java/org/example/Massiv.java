@@ -86,7 +86,8 @@ public class Massiv implements InfMassiv {
     @Override
     public void add(int al) {
         int mas[] = new int[this.size+1];
-        for(int i=0;i<this.size;i++,mas[i]=this.mas[i]);
+        for(int i=0;i<this.size;i++)
+            mas[i]=this.mas[i];
         mas[this.size]=al;
         this.size++; this.mas=mas;
     }

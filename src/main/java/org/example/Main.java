@@ -91,10 +91,16 @@ public class Main {
                     long timeInsertionSort = timeend-time;
                     System.out.println(buf);
 
-                    System.out.println("Сортировка Шелла / Shellsort O(n^2)");
+                    System.out.println("Сортировка Шелла / Shell sort O(n^2)");
                     buf = mas.clone();
                     time = System.currentTimeMillis();  Sorting.ShellSort(buf);    timeend = System.currentTimeMillis();
                     long timeShellSort = timeend-time;
+                    System.out.println(buf);
+
+                    System.out.println("Сортировка Деревом / Tree sort O(n^2)");
+                    buf = mas.clone();
+                    time = System.currentTimeMillis();  Sorting.TreeSort(buf);    timeend = System.currentTimeMillis();
+                    long timeTreeSort = timeend-time;
                     System.out.println(buf);
 
                     System.out.println("Время работы пузырьковой сортировки :"+timeBubbleSort);
@@ -102,6 +108,7 @@ public class Main {
                     System.out.println("Время работы сортировки расческой   :"+timeCombSort);
                     System.out.println("Время работы сортировки вставками   :"+timeInsertionSort);
                     System.out.println("Время работы сортировки Шелла       :"+timeShellSort);
+                    System.out.println("Время работы сортировки Деревом       :"+timeTreeSort);
                 }
                 case 0 -> {
                     System.out.println("- Выход - ");

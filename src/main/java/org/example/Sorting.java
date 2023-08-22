@@ -91,19 +91,17 @@ public class Sorting {
     {
         for(int i=1; i<array.getSize(); i++) // -> от 0 до n
         {
-            //int a = array.setEl(i);
-            int j;
-            for(j=i; j>0; j--)       // от текущего элемента i до 0
+            for(int j=i; j>0; j--)       // от текущего элемента i до 0
                 if(array.setEl(j)<array.setEl(j-1))
                     arrayMethods.swap(array,j,j-1);
                     else break;
-
-            /*for(int k=i-1;k>j;k--)  //от i элемента до меньшего элемента в массиве j
-                array.getEl(k+1,array.setEl(k));
-            array.getEl(j+1,a);*/
         }
     }
-    //Сортировка Шелла / Shellsort
+
+    /**
+     * Сортировка Шелла / Shellsort
+     * @param array - Сортируемый массив
+     */
     public static void ShellSort(Massiv array)
     {
         for(int step = array.getSize()/2;step>0;step/=2) {
@@ -124,7 +122,11 @@ public class Sorting {
     //Сортировка деревом / Tree sort
     public static  void TreeSort(Massiv array)
     {
-
+        Tree tree = new Tree();
+        for(int i=0;i<array.getSize();i++)
+            tree.add(array.setEl(i));
+        array.setSize(0);
+        tree.creatMassiv(array);
     }
     //Быстрая сортировка / Quicksort
     public static void QuickSort(Massiv array)

@@ -4,12 +4,12 @@ package org.example;
 // then press Enter. You can now see whitespace characters in your code.
 
 import java.io.File;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
         System.out.println("-ARRAY-");
-        int key;        //Ключ управления в меню
+        int key=-1;        //Ключ управления в меню
         boolean flg = true; //Параметр продолжения цикла
         Scanner sc = new Scanner(System.in);   //Параметр для ввода данных из окна консоли
         Massiv mas = new Massiv(); //Определение объекта массива
@@ -23,16 +23,22 @@ public class Main {
             System.out.println(" 7 - Поиск в массиве");                                 //
             System.out.println(" 8 - Бинарное дерево из массива");                      //
             System.out.println(" 0 - Выход");                                           //  +
-            System.out.print("Введите ключ управления:"); key = sc.nextInt();
+            System.out.print("Введите ключ управления:");
+            try {
+                key = sc.nextInt();
+            } catch ( InputMismatchException ex)
+            {
+                System.err.println("Ошибка ввода ключа управления:"+ex.getClass()); key=-1;
+            }
             switch (key) {
                 case 1 -> {
-                    System.out.println(mas);    //Вывод массива
-                }
-                case  2-> {
+                    System.out.println(mas);
+                }                               //Вывод массива
+                case 2 -> {
                     mas.restartParam();
-                    System.out.println(mas);    //Вывод массива
-                }
-                case 3->{                       //Ввод собственного массива
+                    System.out.println(mas);
+                }                               //Рандомное заполнение массива
+                case 3 -> {
                     System.out.print("Введите размерность массива:");
                     int size_array = sc.nextInt();   //ввод размерности массива
                     mas = new Massiv(size_array);
@@ -42,8 +48,8 @@ public class Main {
                         mas.setEl(i, sc.nextInt());
                     }
                     System.out.println(mas);
-                }
-                case 4 ->{                      //Ввод массива из файла
+                }                               //Ввод собственного массива
+                case 4 -> {
                     String filename;
                     System.out.print("Введите название файла:"); filename=sc.next();
                     try( Scanner read = new Scanner(new File(filename))){
@@ -54,7 +60,7 @@ public class Main {
                         System.err.println(e);
                     }
                     System.out.println(mas);
-                }
+                }                               //Ввод массива из файла
                 case 7 , 8->{
                     System.out.println("- в разработке - ");
                 }
@@ -63,7 +69,7 @@ public class Main {
                     System.out.println(mas);
                     mas.rndParamPos();
                     System.out.println(mas);
-                }
+                }                                   //Перемешать элементы массива
                 case 6 -> {
                     System.out.println("Сортировки - Исходный массив:");    System.out.println(mas);
 
@@ -115,14 +121,14 @@ public class Main {
                     System.out.println("Время работы сортировки Шелла       :"+timeShellSort);
                     System.out.println("Время работы сортировки Деревом     :"+timeTreeSort);
                     System.out.println("Время работы Быстрой сортировки     :"+timeQuicksort);
-                }
+                }                                 //Сортировки массива
                 case 0 -> {
                     System.out.println("- Выход - ");
                     flg = false;
-                }
+                }                                 //Выход
                 default -> {
                     System.out.println("- Не верный ввод команды");
-                }
+                }                                //Неверная команда управления
             }
             sc.nextLine();sc.nextLine();    //Приостановка перед выводом меню
         }

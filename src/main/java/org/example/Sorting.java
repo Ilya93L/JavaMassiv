@@ -132,6 +132,13 @@ public class Sorting {
             tree.add(array.getEl(i));
         return tree;
     }
+
+    /**
+     * Рекурсивная сортировка массива
+     * @param array - входной массив
+     * @param left - левая граница  сортируемой области
+     * @param right - правая граница сортируемой области
+     */
     private static void QuickSortInter(Massiv array,int left,int right)
     {
         int median = (right+left)/2;

@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 public class Massiv implements InfMassiv {
 
     private  int mas[];         //Массив
-    private int size = 15;//_000;   //Размер массива
+    private int size = 3315;//_000;   //Размер массива
 
     private boolean IndexBounds(int index)  //проверка выхода за границы массива
     {
@@ -41,16 +41,16 @@ public class Massiv implements InfMassiv {
     {
         this.size = masObj.getSize();
         this.mas = new int[this.size];
-        for(int i=0;i<masObj.getSize();i++) this.getEl(i,masObj.setEl(i));
+        for(int i=0;i<masObj.getSize();i++) this.setEl(i,masObj.getEl(i));
     }
     @Override
-    public int setEl(int index){
+    public int getEl(int index){
         if(this.IndexBounds(index))
         return this.mas[index]; else return 0;
     }
 
     @Override
-    public void getEl(int index,int el) {
+    public void setEl(int index,int el) {
         if(this.IndexBounds(index))
         this.mas[index] = el;
     }
@@ -111,7 +111,7 @@ public class Massiv implements InfMassiv {
         if(this.size!=obj.getSize())
             return false;
         for(int i=0;i<this.size;i++)
-            if(this.mas[i]!=obj.setEl(i))
+            if(this.mas[i]!=obj.getEl(i))
                 return false;
         return true;
     }

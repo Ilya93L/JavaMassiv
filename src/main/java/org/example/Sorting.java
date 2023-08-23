@@ -25,7 +25,7 @@ public class Sorting {
         while(flg) {
             flg=false;
             for (int j = i + 1; j < array.getSize(); j++)
-                if (array.setEl(i) > array.setEl(j)) {
+                if (array.getEl(i) > array.getEl(j)) {
                     arrayMethods.swap(array,i,j);
                     flg =true;
                 }
@@ -49,14 +49,14 @@ public class Sorting {
             beg++;
             for(int i=beg;i<end;i++)
             {
-                if(array.setEl(i)>array.setEl(i+1)) {
+                if(array.getEl(i)>array.getEl(i+1)) {
                     arrayMethods.swap(array,i,(i+1));
                 }
             }
             end--;
             for(int i=end;i>beg;i--)
             {
-                if(array.setEl(i)<array.setEl(i-1)) {
+                if(array.getEl(i)<array.getEl(i-1)) {
                     arrayMethods.swap(array,i,(i-1));
                 }
             }
@@ -75,7 +75,7 @@ public class Sorting {
         while(flg)
         {
             for(int i=0;(i+size)<array.getSize();i++)
-                if(array.setEl(i)>array.setEl(i+size))
+                if(array.getEl(i)>array.getEl(i+size))
                     arrayMethods.swap(array,i,(i+size));
             if((size/1.247)>1)
                 size/=1.247;
@@ -92,7 +92,7 @@ public class Sorting {
         for(int i=1; i<array.getSize(); i++) // -> от 0 до n
         {
             for(int j=i; j>0; j--)       // от текущего элемента i до 0
-                if(array.setEl(j)<array.setEl(j-1))
+                if(array.getEl(j)<array.getEl(j-1))
                     arrayMethods.swap(array,j,j-1);
                     else break;
         }
@@ -107,15 +107,15 @@ public class Sorting {
         for(int step = array.getSize()/2;step>0;step/=2) {
             for (int i = step; i < array.getSize(); i++)
             {
-                int a = array.setEl(i);
+                int a = array.getEl(i);
                 int j;
                 for (j = i; j >=step; j-=step)
                 {
-                    if(a<array.setEl(j-step))
-                        array.getEl(j,array.setEl(j-step));
+                    if(a<array.getEl(j-step))
+                        array.setEl(j,array.getEl(j-step));
                         else break;
                 }
-                array.getEl(j, a);
+                array.setEl(j, a);
             }
         }
     }
@@ -124,7 +124,7 @@ public class Sorting {
     {
         Tree tree = new Tree();
         for(int i=0;i<array.getSize();i++)
-            tree.add(array.setEl(i));
+            tree.add(array.getEl(i));
         array.setSize(0);
         tree.creatMassiv(array);
     }

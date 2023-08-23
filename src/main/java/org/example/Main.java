@@ -39,7 +39,7 @@ public class Main {
                     for(int i=0;i<size_array;i++)
                     {
                         System.out.printf("Введите элемент массива [%d]:=",i);
-                        mas.getEl(i, sc.nextInt());
+                        mas.setEl(i, sc.nextInt());
                     }
                     System.out.println(mas);
                 }

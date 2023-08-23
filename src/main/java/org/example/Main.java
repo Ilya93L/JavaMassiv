@@ -97,18 +97,24 @@ public class Main {
                     long timeShellSort = timeend-time;
                     System.out.println(buf);
 
-                    System.out.println("Сортировка Деревом / Tree sort O(n^2)");
+                    System.out.println("Сортировка Деревом / Tree sort O(n log n)");
                     buf = mas.clone();
-                    time = System.currentTimeMillis();  Sorting.TreeSort(buf);    timeend = System.currentTimeMillis();
+                    time = System.currentTimeMillis();  Tree tree = Sorting.TreeSort(buf);    timeend = System.currentTimeMillis();
                     long timeTreeSort = timeend-time;
+                    System.out.println(tree);
+                    System.out.println("Быстрая сортировка / Quicksort O(n log n)");
+                    buf = mas.clone();
+                    time = System.currentTimeMillis();  Sorting.QuickSort(buf);    timeend = System.currentTimeMillis();
+                    long timeQuicksort = timeend-time;
                     System.out.println(buf);
 
-                    System.out.println("Время работы пузырьковой сортировки :"+timeBubbleSort);
-                    System.out.println("Время работы шейкерной сортировки   :"+timeShakerSort);
+                    System.out.println("Время работы Пузырьковой сортировки :"+timeBubbleSort);
+                    System.out.println("Время работы Шейкерной сортировки   :"+timeShakerSort);
                     System.out.println("Время работы сортировки расческой   :"+timeCombSort);
                     System.out.println("Время работы сортировки вставками   :"+timeInsertionSort);
                     System.out.println("Время работы сортировки Шелла       :"+timeShellSort);
-                    System.out.println("Время работы сортировки Деревом       :"+timeTreeSort);
+                    System.out.println("Время работы сортировки Деревом     :"+timeTreeSort);
+                    System.out.println("Время работы Быстрой сортировки     :"+timeQuicksort);
                 }
                 case 0 -> {
                     System.out.println("- Выход - ");

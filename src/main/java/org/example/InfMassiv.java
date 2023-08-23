@@ -3,8 +3,8 @@ package org.example;
 /**
  * Интерфейс InfMassiv
  *  @see InfMassiv#getEl(int) setEl(int index) <a> - получить элемент массива с номером index"</a>
- *  @see InfMassiv#setEl(int, int)  getEl(int index,int el) <a> - задать элемент с номером index параметров el"</a>
- *  @see InfMassiv#getSize()  getSize() <a> - получить текущую размерность массива"</a>
+ *  @see InfMassiv#setEl(int, int)  getEl(int index,int el) <a> - получить текущую размерность массива"</a>
+ *  @see InfMassiv#getSize()  getSize() <a> - задать элемент с номером index параметров el"</a>
  *  @see InfMassiv#toString()  toString() <a> - получить строку вывода элементов массива"</a>
  *  @see InfMassiv#restartParam()  restartParam() <a> - переопределение всех элементов в массиве случайными числами"</a>
  *  @see InfMassiv#add(int)  add(int al) <a> - добавить новый элемент в массив"</a>

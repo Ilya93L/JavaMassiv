@@ -120,17 +120,51 @@ public class Sorting {
         }
     }
     //Сортировка деревом / Tree sort
-    public static  void TreeSort(Massiv array)
+
+    /**
+     * Сортировка деревом / Tree sort O(n log n)
+     * @param array - Сортируемый массив
+     */
+    public static  Tree TreeSort(Massiv array)
     {
         Tree tree = new Tree();
         for(int i=0;i<array.getSize();i++)
             tree.add(array.getEl(i));
-        array.setSize(0);
-        tree.creatMassiv(array);
+        return tree;
     }
-    //Быстрая сортировка / Quicksort
+    private static void QuickSortInter(Massiv array,int left,int right)
+    {
+        int median = (right+left)/2;
+        for(int i=left;i<right;i++)
+        {
+            if(i==median) continue;
+            if(i<median)    //i<media левая часть
+            {
+                if(array.getEl(median)<array.getEl(i))  //перестановка большего элемента в правую часть
+                {
+                    arrayMethods.swap(array,i,median);
+                    median = i;
+                }
+            } else {//      i>median правая часть
+                if(array.getEl(median)>array.getEl(i)) // перестановка меньшего элемента в левую часть
+                {
+                    arrayMethods.swap(array,i,median+1);
+                    arrayMethods.swap(array,median,median+1);
+                    median++;
+                }
+            }
+        }
+        if((median-left)>1)
+            Sorting.QuickSortInter(array,left,median);
+        if((right-median)>1)
+            Sorting.QuickSortInter(array,median,right);
+    }
+    /**
+     * Быстрая сортировка / Quicksort O(n log n)
+     * @param array - Сортируемый массив
+     */
     public static void QuickSort(Massiv array)
     {
-
+        Sorting.QuickSortInter(array,0,array.getSize());
     }
 }

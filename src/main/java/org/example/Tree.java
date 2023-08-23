@@ -62,7 +62,7 @@ public class Tree {
     }
 
     /**
-     *
+     * Перевод дерева в отсортированный массив
      * @param array
      * @return
      */

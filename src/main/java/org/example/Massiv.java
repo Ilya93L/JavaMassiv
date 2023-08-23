@@ -8,8 +8,8 @@ import java.util.stream.Stream;
  * Методы класса Massiv:
  * @see Massiv#add(int) 
  * @see Massiv#getSize() 
- * @see Massiv#getEl(int, int) 
- * @see Massiv#setEl(int) 
+ * @see Massiv#setEl(int, int)
+ * @see Massiv#getEl(int)
  * @see Massiv#toString() 
  * @see Massiv#equals(Massiv) 
  * @see Massiv#restartParam() 
@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 public class Massiv implements InfMassiv {
 
     private  int mas[];         //Массив
-    private int size = 3315;//_000;   //Размер массива
+    private int size = 100_000;//_000;   //Размер массива
 
     private boolean IndexBounds(int index)  //проверка выхода за границы массива
     {

@@ -82,7 +82,7 @@ public class Tree {
 
         String [] arrayStr = new String[deep];
         for(int i=0;i<deep;i++)arrayStr[i]="";
-        this.arrayStringTree(arrayStr,0,deep*2);
+        this.arrayStringTree(arrayStr,0,(deep*(deep/5))*2);
 
         String result = "";
         for(int i=0;i<deep;i++)

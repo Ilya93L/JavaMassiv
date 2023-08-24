@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 public class Massiv implements InfMassiv {
 
     private  int mas[];         //Массив
-    private int size = 10;//0_000;//_000;   //Размер массива
+    private int size = 20;//0_000;//_000;   //Размер массива
 
     private boolean IndexBounds(int index)  //проверка выхода за границы массива
     {

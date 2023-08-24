@@ -11,8 +11,11 @@ public class Search {
      * @param el - искомый элемент
      * @return - индекс искомого элемента
      */
-    public int SequentialSearch(Massiv array, int el)
+    public static int SequentialSearch(Massiv array, int el)
     {
+        int i;
+        for(i=0;i<array.getSize();i++)
+            if(array.getEl(i)==el) return i;
         return array.getSize()+1;
     }
 
@@ -22,8 +25,22 @@ public class Search {
      * @param el - искомый элемент
      * @return - индекс искомого элемента
      */
-    public int BinarySearch(Massiv array, int el)
+    public static  int BinarySearch(Massiv array, int el)
     {
+        int left = 0;
+        int right= array.getSize();
+        while (true)
+        {
+            int median = (right+left)/2;
+            if(array.getEl(median)==el) return median;
+            if(median==1) break;
+            if(array.getEl(median)<el)
+            {
+                left = median;
+            }else{
+                right=median;
+            }
+        }
         return array.getSize()+1;
     }
 

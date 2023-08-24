@@ -4,6 +4,7 @@ package org.example;
 // then press Enter. You can now see whitespace characters in your code.
 
 import java.io.File;
+import java.lang.reflect.Member;
 import java.util.*;
 
 public class Main {
@@ -61,9 +62,6 @@ public class Main {
                     }
                     System.out.println(mas);
                 }                               //Ввод массива из файла
-                case 7 , 8->{
-                    System.out.println("- в разработке - ");
-                }
                 case 5->{
                     System.out.println("Перемешать элементы массива");
                     System.out.println(mas);
@@ -122,6 +120,27 @@ public class Main {
                     System.out.println("Время работы сортировки Деревом     :"+timeTreeSort);
                     System.out.println("Время работы Быстрой сортировки     :"+timeQuicksort);
                 }                                 //Сортировки массива
+                case 7 -> {
+                    try {
+                        System.out.print("Введите искомое число:"); int el = sc.nextInt();
+                        Massiv buf = new Massiv(mas);
+                        Sorting.ShellSort(buf);
+                        int ind = Search.SequentialSearch(buf,el);
+                        if(ind<buf.getSize())
+                            System.out.printf("Линейный поиск: искомое число %d найдено = массив[%d]=%d\n",el,ind,buf.getEl(ind));
+                            else System.out.println("Число не найдено!");
+                        ind = Search.BinarySearch(buf,el);
+                        if(ind<buf.getSize())
+                            System.out.printf("Бинарный поиск: искомое число %d найдено = массив[%d]=%d\n",el,ind,buf.getEl(ind));
+                        else System.out.println("Число не найдено!");
+                    } catch (InputMismatchException ex)
+                    {
+                        System.err.println("Неверный ввод числа: "+ex.getClass());
+                    }
+                }//Поиск в массиве
+                case 8 -> {
+                    System.out.println("- в разработке - ");
+                }
                 case 0 -> {
                     System.out.println("- Выход - ");
                     flg = false;

@@ -106,6 +106,7 @@ public class Main {
                     time = System.currentTimeMillis();  Tree tree = Sorting.TreeSort(buf);    timeend = System.currentTimeMillis();
                     long timeTreeSort = timeend-time;
                     System.out.println(tree);
+
                     System.out.println("Быстрая сортировка / Quicksort O(n log n)");
                     buf = mas.clone();
                     time = System.currentTimeMillis();  Sorting.QuickSort(buf);    timeend = System.currentTimeMillis();
@@ -139,7 +140,10 @@ public class Main {
                     }
                 }//Поиск в массиве
                 case 8 -> {
-                    System.out.println("- в разработке - ");
+                    Tree tree = new Tree();
+                    for(int i=0;i<mas.getSize();i++) tree.add(mas.getEl(i));
+                    //System.out.println(tree);
+                    System.out.println(tree.toStringTree());
                 }
                 case 0 -> {
                     System.out.println("- Выход - ");

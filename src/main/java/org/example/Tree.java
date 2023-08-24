@@ -1,5 +1,7 @@
 package org.example;
 
+import java.beans.PropertyEditorSupport;
+
 /**
  * Класс дерева
  */
@@ -7,7 +9,6 @@ public class Tree {
     private  Integer key;
     private  Tree left;
     private  Tree right;
-
     /**
      * Конструктор без параметров
      */
@@ -27,7 +28,6 @@ public class Tree {
         this();
         key = el;
     }
-
     /**
      * Добавить элемент в дерево
      * @param el
@@ -50,6 +50,45 @@ public class Tree {
         }
     }
 
+    private int getDeepTree(int deep)
+    {
+        int deep_left = (this.left!=null)?this.left.getDeepTree(deep+1):deep;
+        int deep_right = (this.right!=null)?this.right.getDeepTree(deep+1):deep;
+        return Math.max(deep_right,deep_left);
+    }
+    private void arrayDeep(Massiv[]array,int deep)
+    {
+        array[deep].add(this.key);
+        if(this.left!=null) this.left.arrayDeep(array,deep+1);
+        if(this.right!=null) this.right.arrayDeep(array,deep+1);
+    }
+    private static String stringTab(int count) {
+        String result = "";
+        for (int i = 0; i < count; i++) result += "\t";
+        return result;
+    }
+    private  void arrayStringTree(String[]array,int deep,int count)
+    {
+        Integer a = this.key;
+        array[deep]+=stringTab(count)+a.toString();
+        if(this.left!=null) this.left.arrayStringTree(array,deep+1,count/2);
+        if(this.right!=null) this.right.arrayStringTree(array,deep+1,(count/2)+count/2);
+    }
+    public String toStringTree()
+    {
+        int deep_left = (this.left!=null)?this.getDeepTree(1):1;
+        int deep_right = (this.right!=null)?this.getDeepTree(1):1;
+        int deep = Math.max(deep_right,deep_left);
+
+        String [] arrayStr = new String[deep];
+        for(int i=0;i<deep;i++)arrayStr[i]="";
+        this.arrayStringTree(arrayStr,0,deep*2);
+
+        String result = "";
+        for(int i=0;i<deep;i++)
+            result = result+arrayStr[i]+"\n";
+        return result;
+    }
     /**
      * Вывод дерева
      * @return
